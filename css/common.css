@@ -1,0 +1,102 @@
+body {
+  background: #f1f2f2;
+  color: #414141;
+  font-family: "Helvetica Regular", Arial;
+  font-size: 16px;
+}
+
+.main-wrapper {
+  margin: 0 auto;
+  max-width: 700px;
+  width: 100%;
+}
+#element.style {
+   
+    height: 500px;
+    width: 500px;
+	}
+	.col-md-6
+	{
+	height: 250px;
+    width: 250px;
+	}
+	#pie1{
+		margin-left:120px;
+	}
+	#tbdiv{
+		
+		height:250px;
+		overflow-x: auto;
+		width:120%;
+		
+		
+		
+		
+	}
+	#btndownload{
+		margin-bottom:15px
+	}
+	#gauge{
+		background-color:#696969
+	}
+	#piegrid{
+	
+	background-color: #D3D3D3; 
+	margin-left: 2%;
+	height:300px;
+	}
+	#page
+	{
+		margin-left:5%;
+	
+	}
+  .demo2 {
+           
+            width: 15vw;
+            height: 15vw;
+           
+            float:left;
+            margin:20px
+        }
+
+        .gauge1 {
+			
+            position: relative;
+            width: 15vw;
+            height: 15vw;
+            box-sizing: border-box;
+            float:right;
+            margin:20px;
+			margin-right: 40px;
+        }
+		#gauge1_label
+		{
+			margin-left: 6%; 
+			margin-top: 3%; 
+			font-weight: bold
+		}
+		#page_no{
+			float: right;
+			margin-top: 3%;
+			font-size: 15px;
+			color: #23527c;
+			background-color: white;
+			font-weight:5px;
+			border: 1px solid #ddd;
+			width: 35px;
+			text-align: center;
+
+		}
+		.tabel_label
+		{
+			margin-left: 2%;
+			text-align: center;
+			font-size: medium;
+			margin-top: 3%;
+			flood-color: #696969;
+			text-decoration: underline;
+
+		}
+		:root {
+  --mdc-layout-grid-column-width-desktop: 84px;
+}

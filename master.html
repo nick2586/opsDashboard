@@ -1,0 +1,126 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8"/>
+    <title></title>
+    <link href="css/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="css/common.css" rel="stylesheet" type="text/css"/>
+    <link href="css/jquery-gauge.css" rel="stylesheet" type="text/css"/>
+    <link rel="stylesheet" href="css/material.indigo-pink.min.css">
+    <link rel="stylesheet" ; href="css/ng-table.min.css">
+
+
+    <script type="text/javascript" src="libraries/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="libraries/bootstrap.min.js"></script>
+    <script type="text/javascript" src="libraries/angular.min.js"></script>
+    <script type="text/javascript" src="libraries/angular-route.js"></script>
+    <script type="text/javascript" src="libraries/chart.js"></script>
+    <script type="text/javascript" src="libraries/Chart.min.js"></script>
+    <script type="text/javascript" src="libraries/angular-chart.min.js"></script>
+    <script type="text/javascript" src="js/controller/app.js"></script>
+    <script type="text/javascript" src="libraries/jquery-gauge.min.js"></script>
+    <script src="libraries/material.min.js"></script>
+    <script src="libraries/ng-table.min.js"></script>
+    <script data-require="ui-bootstrap@*" data-semver="0.12.1" src="libraries/ui-bootstrap-tpls-0.12.1.min.js"></script>
+    <script src="https://www.w3schools.com/lib/w3.js"></script>
+
+
+    <style>
+    </style>
+</head>
+<body>
+<div class="mdl-layout mdl-js-layout mdl-layout--fixed-drawer mdl-layout--fixed-header">
+    <div w3-include-html="partial/header.html">
+    </div>
+    <div class="mdl-layout__drawer" w3-include-html="partial/sidebar.html">
+
+    </div>
+    <script>
+        w3.includeHTML();
+    </script>
+
+    <main class="mdl-layout__content">
+        <div ui-view="">
+
+
+            <div class="main-wrapper">
+                <!--<div class="chart-wrapper">
+                    <div class="left-chart">-->
+                <div class="" ng-app="app" ng-controller="ChartCtrl">
+
+                    <div id="piegrid" class="row">
+                        <div class="row" id="gauge1_label">
+                            <div class="col-xs-6">CMDB Correctness</div>
+                            <div class="col-xs-6" align="center">Chef Correctness</div>
+                        </div>
+                        <div id="pie1" class="mdc-layout-grid__cell" >
+                            <div class="gauge1 demo1"></div>
+                        </div>
+                        <div id="pie2" class="mdc-layout-grid__cell" ng-click="showPie">
+                            <div class="gauge2 demo2"></div>
+                        </div>
+                    </div>
+                    <div class="tabel_label" id="tabelLabel" ng-show="showEl()">{{tableLable}}</div>
+
+                    <script>
+                        var theUrl = "http://127.0.0.1:5000/api/v1/dashboard/getCMDBCompleteness/";
+                        var xmlHttp = new XMLHttpRequest();
+                        xmlHttp.open("GET", theUrl, false); // false for synchronous request
+                        xmlHttp.send(null);
+                        var Data = JSON.parse(xmlHttp.responseText);
+                        var gauge = new Gauge($('.gauge1'), {
+                            value: 85
+                        });
+                        var gauge = new Gauge($('.gauge2'), {
+                            value: Data
+                        });
+
+                    </script>
+
+                    <p>&nbsp;</p>
+
+                    <div class="col-xs-12 responsive" id="userdata">
+                        <div id="tbdiv" class="col-xs-12 responsive" style="overflow-x: auto;">
+                            <button class="btn btn-primary" type="button" export-to-csv id="btndownload">Download <span
+                                    class="badge">{{len}}</span></button>
+                            <table id="tb"
+                                   class="table table-bordered table-responsive table-striped">
+                                <thead>
+                                <tr>
+                                    <th>Server Name</th>
+                                    <th>Operating System</th>
+                                    <th>Memory(MB)</th>
+                                    <th>CPU Count</th>
+                                    <th>OS Name</th>
+
+                                </tr>
+                                </thead>
+                                <tbody>
+                                <tr ng-repeat="user in filteredTodos">
+                                    <td>{{user.server_name}}</td>
+                                    <td>{{user.os_version}}</td>
+                                    <td>{{user.memoryMB}}</td>
+                                    <td>{{user.cpuCount}}</td>
+                                    <td>{{user.os_name}}</td>
+
+                                </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                        <pagination id="page" ng-model="currentPage" total-items="len"
+                                    max-size="maxSize" boundary-links="true"></pagination>
+                        <span id="page_no" align="center">{{curr}}/{{totalpage}}</span>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+</div>
+
+</div>
+</main>
+</main>
+</body>
+</html>

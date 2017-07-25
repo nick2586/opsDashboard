@@ -1,0 +1,32 @@
+﻿<span class="mdl-layout-title mdl-color-text--blue-grey">SDDC
+				<i class="material-icons mdl-color-text--blue-grey">cloud</i>
+			</span>
+			<nav class="mdl-navigation ">
+				<nav class="mdl-navigation ">
+					<!-- link -->
+					<button style="text-align: left; padding-left: 15%"
+						ng-click="opcxNav = ! opcxNav"
+						class="mdl-button mdl-js-button mdl-button--primary">
+						OPCx
+						<!--show right arow key when sub menu is NOT shown for opcxNav-->
+						<i ng-if="!opcxNav"
+							class="material-icons mdl-color-text--blue-grey">keyboard_arrow_right</i>
+						<!--show down arow key when sub menu is shown for opcxNav-->
+						<i ng-if="opcxNav"
+							class="material-icons mdl-color-text--blue-grey">keyboard_arrow_down</i>
+					</button>
+					<!-- sub menu  -->
+					<nav class="mdl-navigation" ng-show="opcxNav">
+						<a class="mdl-navigation__link" ui-sref="app.opcx.vraRequests">vRA
+							Requests</a> <a class="mdl-navigation__link" id="opcx"
+							data-ui-sref="app.opcx.vroStatus">vRO Status</a>
+					</nav>
+
+				</nav>
+
+				<hr />
+				<button style="text-align: left; padding-left: 15%"
+					; ng-click="signOut()"
+					class="mdl-button mdl-js-button mdl-button--primary">Sign
+					Out</button>
+			</nav>
